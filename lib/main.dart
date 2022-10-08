@@ -50,10 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
   final Completer<GoogleMapController> _controller = Completer();
 
   static const CameraPosition _kceMainGate = CameraPosition(
+    target: LatLng(10.880597949290937, 77.02262304529096),
+    zoom: 15,
+  );
+
+  static const CameraPosition _kLake = CameraPosition(
     bearing: 192.8334901395799,
     target: LatLng(10.880597949290937, 77.02262304529096),
     tilt: 59.440717697143555,
-    zoom: 19,
+    zoom: 19.151926040649414,
   );
 
   @override
@@ -61,43 +66,27 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.info_rounded),
-        ),
         title: const Text('Kce Maps'),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            iconSize: 30,
-            icon: const Icon(
-              Icons.search_rounded,
-              size: 30,
-            ),
-          ),
-        ],
       ),
       body: GoogleMap(
-        mapToolbarEnabled: true,
         compassEnabled: true,
-        mapType: MapType.hybrid,
+        mapType: MapType.terrain,
         initialCameraPosition: _kceMainGate,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToMainGate,
-        label: const Text(' Kce Main Gate '),
-        icon: const Icon(Icons.door_sliding_outlined),
+        label: const Text('To Kce Main Gate '),
+        icon: const Icon(Icons.directions_boat),
       ),
     );
   }
 
   Future<void> _goToMainGate() async {
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_kceMainGate));
+    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }
