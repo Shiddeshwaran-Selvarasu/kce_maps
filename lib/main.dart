@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const CameraPosition _kceMainGate = CameraPosition(
     target: LatLng(10.880597949290937, 77.02262304529096),
-    zoom: 14.4746,
+    zoom: 15,
   );
 
   static const CameraPosition _kLake = CameraPosition(
