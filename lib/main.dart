@@ -61,21 +61,37 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.info_rounded),
+        ),
         title: const Text('Kce Maps'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            iconSize: 30,
+            icon: const Icon(
+              Icons.search_rounded,
+              size: 30,
+            ),
+          ),
+        ],
       ),
       body: GoogleMap(
+        mapToolbarEnabled: true,
         compassEnabled: true,
-        mapType: MapType.terrain,
+        mapType: MapType.hybrid,
         initialCameraPosition: _kceMainGate,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToMainGate,
-        label: const Text('To Kce Main Gate '),
-        icon: const Icon(Icons.directions_boat),
+        label: const Text(' Kce Main Gate '),
+        icon: const Icon(Icons.door_sliding_outlined),
       ),
     );
   }
