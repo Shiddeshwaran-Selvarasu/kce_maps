@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'KCE Maps',
       theme: ThemeData(
         useMaterial3: true,
@@ -65,14 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed: (){}, icon: Icon(Icons.info),),
+        actions: [
+          IconButton(onPressed: (){}, icon:Icon(Icons.search))
+        ],
         backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
         title: Text(widget.title),
         centerTitle: true,
       ),
       body: GoogleMap(
-        mapToolbarEnabled: true,
+        // mapToolbarEnabled: true,
         compassEnabled: true,
-        mapType: MapType.terrain,
+        mapType: MapType.hybrid,
+
         initialCameraPosition: _kceMainGate,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
