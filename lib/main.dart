@@ -49,8 +49,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final Completer<GoogleMapController> _controller = Completer();
 
-  static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+  static const CameraPosition _kceMainGate = CameraPosition(
+    target: LatLng(10.880597949290937, 77.02262304529096),
     zoom: 14.4746,
   );
 
@@ -71,8 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: GoogleMap(
         compassEnabled: true,
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
+        mapType: MapType.terrain,
+        initialCameraPosition: _kceMainGate,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
