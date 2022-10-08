@@ -50,15 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
   final Completer<GoogleMapController> _controller = Completer();
 
   static const CameraPosition _kceMainGate = CameraPosition(
-    target: LatLng(10.880597949290937, 77.02262304529096),
-    zoom: 15,
-  );
-
-  static const CameraPosition _kLake = CameraPosition(
     bearing: 192.8334901395799,
     target: LatLng(10.880597949290937, 77.02262304529096),
     tilt: 59.440717697143555,
-    zoom: 19.151926040649414,
+    zoom: 16,
   );
 
   @override
@@ -87,6 +82,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _goToMainGate() async {
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
+    controller.animateCamera(CameraUpdate.newCameraPosition(_kceMainGate));
   }
 }
