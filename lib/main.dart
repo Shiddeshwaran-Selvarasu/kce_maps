@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'KCE Maps',
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.light,
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'KCE Maps'),
     );
   }
 }
@@ -66,10 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-        title: const Text('Kce Maps'),
+        title: Text(widget.title),
         centerTitle: true,
       ),
       body: GoogleMap(
+        mapToolbarEnabled: true,
         compassEnabled: true,
         mapType: MapType.terrain,
         initialCameraPosition: _kceMainGate,
@@ -77,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _controller.complete(controller);
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToMainGate,
         label: const Text('To Kce Main Gate '),
