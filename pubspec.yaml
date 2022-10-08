@@ -40,6 +40,7 @@ dependencies:
   google_maps_flutter_web:
   http:
   json_serializable:
+  dynamic_color:
   firebase_core:
 
 dev_dependencies:
