@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836020710681",
+    "project_id": "kcemaps",
+    "storage_bucket": "kcemaps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836020710681:android:fbd2dd1d7cf8db3069e988",
+        "android_client_info": {
+          "package_name": "com.example.kce_maps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836020710681-nv6mvv1uc2otdd7bj1hdam8ejue8nj35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACooskeRdnl1N0252zJh5GxEpY1LTGLy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836020710681-nv6mvv1uc2otdd7bj1hdam8ejue8nj35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
