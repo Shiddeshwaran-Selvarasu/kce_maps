@@ -51,12 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const CameraPosition _kceMainGate = CameraPosition(
     target: LatLng(10.880597949290937, 77.02262304529096),
-    zoom: 14.4746,
+    zoom: 15,
   );
 
   static const CameraPosition _kLake = CameraPosition(
     bearing: 192.8334901395799,
-    target: LatLng(37.43296265331129, -122.08832357078792),
+    target: LatLng(10.880597949290937, 77.02262304529096),
     tilt: 59.440717697143555,
     zoom: 19.151926040649414,
   );
@@ -78,14 +78,14 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: _goToTheLake,
-        label: const Text('To the lake!'),
+        onPressed: _goToMainGate,
+        label: const Text('To Kce Main Gate '),
         icon: const Icon(Icons.directions_boat),
       ),
     );
   }
 
-  Future<void> _goToTheLake() async {
+  Future<void> _goToMainGate() async {
     final GoogleMapController controller = await _controller.future;
     controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
