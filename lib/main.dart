@@ -77,10 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
           _controller.complete(controller);
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartDocked,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToMainGate,
         label: const Text('To Kce Main Gate '),
-        icon: const Icon(Icons.directions_boat),
+        icon: const Icon(Icons.door_sliding_outlined),
       ),
     );
   }
