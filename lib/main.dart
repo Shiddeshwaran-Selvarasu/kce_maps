@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     bearing: 192.8334901395799,
     target: LatLng(10.880597949290937, 77.02262304529096),
     tilt: 59.440717697143555,
-    zoom: 16,
+    zoom: 19,
   );
 
   @override
