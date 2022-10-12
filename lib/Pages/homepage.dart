@@ -39,7 +39,10 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              showSearch(context: context, delegate: SearchBar());
+              showSearch(
+                context: context,
+                delegate: SearchBar(),
+              );
             },
             icon: const Icon(Icons.search),
           )
@@ -57,10 +60,10 @@ class _HomePageState extends State<HomePage> {
           _controller.complete(controller);
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToMainGate,
-        label: const Text('To Kce Main Gate '),
+        label: const Text('Kce Main Gate '),
         icon: const Icon(Icons.door_sliding_outlined),
       ),
     );
