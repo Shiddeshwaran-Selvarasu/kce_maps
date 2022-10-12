@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 
 class SearchBar extends SearchDelegate<String> {
-  List<String> searchList = ["ONe", "two", "three", "four"];
+  List<String> searchList = [
+    "Main Gate",
+    "Boys Hostel",
+    "Girls Hostel",
+    "A Block",
+    "Gym",
+    "MBA Block",
+    "C Block",
+    "D Block",
+    "E Block",
+    "New Placement Cell",
+    "Old Placement Cell",
+    "Food Court",
+    "Dean Block",
+    "New Boys Hostel",
+  ];
 
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
         onPressed: () {
-          if(query == ""){
+          if (query == "") {
             close(context, "");
           } else {
             query = "";
@@ -40,8 +55,9 @@ class SearchBar extends SearchDelegate<String> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<String> suggestions =
-        searchList.where((text) => text.toLowerCase().contains(query.toLowerCase())).toList();
+    List<String> suggestions = searchList
+        .where((text) => text.toLowerCase().contains(query.toLowerCase()))
+        .toList();
     return ListView.builder(
       itemCount: suggestions.length,
       itemBuilder: (context, index) {
