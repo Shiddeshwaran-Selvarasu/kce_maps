@@ -47,7 +47,8 @@ class SearchBar extends SearchDelegate<String> {
         searchList.indexWhere((element) => element.name.contains(query))];
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -64,22 +65,29 @@ class SearchBar extends SearchDelegate<String> {
             ),
             items: place.image
                 .map(
-                  (e) => ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: CachedNetworkImage(
-                      imageUrl: e.toString(),
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width,
-                      fadeOutDuration: const Duration(microseconds: 3),
-                      progressIndicatorBuilder: (context, s, d) {
-                        return Center(
-                          child: CircularProgressIndicator(
-                            value: d.totalSize != null
-                                ? d.downloaded / d.totalSize!
-                                : null,
-                          ),
-                        );
-                      },
+                  (e) => Container(
+                    padding: EdgeInsets.all(10),
+
+                    decoration: BoxDecoration(
+                   borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: CachedNetworkImage(
+                        imageUrl: e.toString(),
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width,
+                        fadeOutDuration: const Duration(microseconds: 3),
+                        progressIndicatorBuilder: (context, s, d) {
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: d.totalSize != null
+                                  ? d.downloaded / d.totalSize!
+                                  : null,
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 )
