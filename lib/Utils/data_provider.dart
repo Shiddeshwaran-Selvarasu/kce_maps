@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import 'models.dart';
 
@@ -15,7 +14,7 @@ class DataProvider extends ChangeNotifier {
       value.docs.forEach((element) {
         String name = element.id;
         var data = element.data()[name];
-        print("name = $name data = $data");
+        // print("name = $name data = $data");
         places.addAll({
           element.id: Spots(
             name: data['name'],
@@ -28,7 +27,6 @@ class DataProvider extends ChangeNotifier {
         });
       });
     });
-    print(places);
     return places;
   }
 }

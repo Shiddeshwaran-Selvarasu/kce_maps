@@ -41,13 +41,13 @@ dependencies:
 
   location:
   cupertino_icons:
-  anim_search_bar:
   google_maps_flutter:
   http:
   firebase_core:
   provider:
   cached_network_image:
   cloud_firestore:
+  carousel_slider:
 
 
 dev_dependencies:
