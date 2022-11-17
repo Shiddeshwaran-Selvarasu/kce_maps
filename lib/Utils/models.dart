@@ -5,7 +5,7 @@ class Spots {
   final List<dynamic> image;
   final String description;
   final int id;
-  final String blockName;
+  final String? blockName;
   final GeoPoint loc;
 
   Spots({
